@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beast Number Info API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .section h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .endpoint {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .endpoint-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        .param {
+            color: #4299e1;
+        }
+        .response {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .try-it {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .try-it:hover {
+            background: #5568d3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .developer {
+            color: #667eea;
+            font-weight: bold;
+        }
+        ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        li {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐺 Beast Number Info API</h1>
+        <p class="subtitle">Get detailed phone number information with ease</p>
+        
+        <div class="section">
+            <h2>📖 API Documentation</h2>
+            <p>This API provides detailed information about phone numbers. Simply make a GET request with the required parameters.</p>
+        </div>
+
+        <div class="section">
+            <h2>🔌 Endpoints</h2>
+            
+            <div class="endpoint">
+                <div class="endpoint-title">GET /num</div>
+                <p>Retrieve phone number information</p>
+                
+                <h3 style="margin-top: 15px; color: #555;">Parameters:</h3>
+                <ul>
+                    <li><span class="param">key</span> (required): API key - Use "beast"</li>
+                    <li><span class="param">num</span> (required): Phone number to look up</li>
+                </ul>
+                
+                <div class="code-block">
+GET /num?key=beast&num=XXXXXXXXXX
+                </div>
+                
+                <h3 style="margin-top: 15px; color: #555;">Example Request:</h3>
+                <div class="code-block">
+https://beast-num.vercel.app/num?key=beast&num=6205769287
+                </div>
+                
+                <a href="/num?key=beast&num=6205769287" class="try-it" target="_blank">Try It Out →</a>
+            </div>
+
+            <div class="endpoint">
+                <div class="endpoint-title">GET /</div>
+                <p>Get API information and usage instructions</p>
+                
+                <div class="code-block">
+GET /
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📝 Response Format</h2>
+            <div class="response">
+                <pre style="margin: 0; color: #2d3748;">{
+  "response": { ... },
+  "developer": "@beastaccuser"
+}</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ Error Codes</h2>
+            <ul>
+                <li><strong>401</strong>: Invalid API key</li>
+                <li><strong>400</strong>: Missing phone number parameter</li>
+                <li><strong>504</strong>: Real API timeout</li>
+                <li><strong>502</strong>: Failed to fetch data</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Developed by <span class="developer">@beastaccuser</span></p>
+            <p>Made with ❤️ using Flask + Vercel</p>
+        </div>
+    </div>
+
+    <!-- Vercel Speed Insights -->
+    <script type="module">
+        import { injectSpeedInsights } from 'https://esm.sh/@vercel/speed-insights@1';
+        injectSpeedInsights();
+    </script>
+</body>
+</html>
