@@ -1,0 +1,12 @@
+{
+  "name": "beast-num",
+  "version": "1.0.0",
+  "description": "Beast Number Info API with Speed Insights",
+  "private": true,
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  }
+}
